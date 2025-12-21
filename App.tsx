@@ -1,8 +1,21 @@
 import React from 'react';
-import Root from './src/Root';
+import { useColorScheme } from 'react-native';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Navigation } from './src/screens/RootStack';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-const App = () => {
-  return <Root />;
-};
+export default function App() {
+  const isDarkMode = useColorScheme() === 'dark';
 
-export default App;
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+          <Navigation />
+        </GestureHandlerRootView>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+}
