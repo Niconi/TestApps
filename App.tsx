@@ -2,7 +2,7 @@ import React from 'react';
 import { useColorScheme } from 'react-native';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { Navigation } from './src/screens/RootStack';
+import { StackNavigation } from './src/screens/RootStack';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
       <SafeAreaView style={{ flex: 1 }}>
         <GestureHandlerRootView style={{ flex: 1 }}>
           <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-          <Navigation />
+          <StackNavigation />
         </GestureHandlerRootView>
       </SafeAreaView>
     </SafeAreaProvider>

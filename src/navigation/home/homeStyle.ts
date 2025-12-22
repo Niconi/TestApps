@@ -28,14 +28,14 @@ export default StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: color.headerText,
+    color: color.hHeader,
     textAlign: 'center',
     marginTop: 33,
     marginBottom: 15,
   },
   text: {
     fontSize: 13,
-    color: color.text,
+    color: color.htext,
     textAlign: 'center',
     marginBottom: 70,
     marginHorizontal: 27,
