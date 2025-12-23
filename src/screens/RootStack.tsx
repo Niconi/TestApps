@@ -1,9 +1,9 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import main from '../navigation/main/main';
 import home from '../navigation/home/home';
 import portofolio from '../navigation/portofolio/portofolio';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeIcon from '../assets/images/Home.svg';
 import PortofolioIcon from '../assets/images/Portofolio.svg';
 
@@ -21,13 +21,25 @@ function HomeStack() {
           flexDirection: 'row',
           width: '100%',
           height: 80,
+          paddingTop: 20,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          backgroundColor: '#FFFFFF',
+          elevation: 10,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: -2,
+          },
+          shadowOpacity: 0.1,
+          shadowRadius: 3,
         },
       }}>
       <Tab.Screen
         name="Home"
         component={home}
         options={{
-          tabBarIcon: ({color, size}) => (
+          tabBarIcon: ({ color, size }) => (
             <HomeIcon width={size} height={size} fill={color} />
           ),
         }}
@@ -36,7 +48,7 @@ function HomeStack() {
         name="Portofolio"
         component={portofolio}
         options={{
-          tabBarIcon: ({color, size}) => (
+          tabBarIcon: ({ color, size }) => (
             <PortofolioIcon width={size} height={size} stroke={color} />
           ),
         }}
@@ -52,12 +64,12 @@ export function RootStack() {
         <Stack.Screen
           name="Main"
           component={main}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="HomeStack"
           component={HomeStack}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
