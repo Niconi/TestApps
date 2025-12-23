@@ -4,7 +4,7 @@ import main1 from '../../assets/images/main1.png';
 import { useNavigation } from '@react-navigation/native';
 
 
-function main() {
+function Main() {
   const navigation = useNavigation();
   return (
     <View style={StyleSheet.container}>
@@ -25,4 +25,4 @@ function main() {
   );
 }
 
-export default main;
+export default Main;

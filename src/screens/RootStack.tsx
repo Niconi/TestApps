@@ -17,6 +17,11 @@ function HomeStack() {
         headerShown: false,
         tabBarActiveTintColor: '#102693',
         tabBarInactiveTintColor: '#909090',
+        tabBarStyle: {
+          flexDirection: 'row',
+          width: '100%',
+          height: 80,
+        },
       }}>
       <Tab.Screen
         name="Home"

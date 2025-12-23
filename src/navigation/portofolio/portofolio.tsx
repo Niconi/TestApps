@@ -1,11 +1,11 @@
 import {View, Text} from 'react-native';
 
-function portofolio() {
-    return (
-        <View>
-            <Text>Portofolio</Text>
-        </View>
-    );
+function Portofolio() {
+  return (
+    <View>
+      <Text>Portofolio</Text>
+    </View>
+  );
 }
 
-export default portofolio;
+export default Portofolio;

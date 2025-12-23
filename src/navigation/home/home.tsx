@@ -1,17 +1,12 @@
 import React, {useRef, useMemo} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ImageBackground,
-} from 'react-native';
+import {View, Text, Image, ImageBackground} from 'react-native';
 import StyleSheet from './homeStyle';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 import {useNavigation} from '@react-navigation/native';
 import {ProgressBar} from 'react-native-paper';
 import CustomButton from '../../ui-kit/button/button';
 
-function home() {
+function Home() {
   const bottomSheetRef = useRef<BottomSheet>(null);
   const snapPoints = useMemo(() => ['50%', '90%'], []);
   const navigation = useNavigation();
@@ -38,7 +33,7 @@ function home() {
         <Text style={StyleSheet.balanceAmount}>Rp. 10.430.000</Text>
         <ProgressBar
           style={StyleSheet.balanceProgress}
-          progress={0.5}
+          progress={0.25}
           color={'#102693'}
         />
         <Text style={StyleSheet.balanceLimit}>
@@ -63,7 +58,8 @@ function home() {
         ref={bottomSheetRef}
         snapPoints={snapPoints}
         index={0}
-        enablePanDownToClose={false}>
+        enablePanDownToClose={false}
+        handleIndicatorStyle={StyleSheet.handleIndicator}>
         <BottomSheetView style={StyleSheet.block}>
           <Text style={StyleSheet.btHeaderText}>Transaction History</Text>
           <Text style={StyleSheet.btSubText}>No Transaction History</Text>
@@ -75,4 +71,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;

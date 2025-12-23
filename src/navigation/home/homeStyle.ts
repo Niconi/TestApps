@@ -101,6 +101,13 @@ export default StyleSheet.create({
     textAlign: 'center',
     marginLeft: 2,
   },
+  handleIndicator: {
+    backgroundColor: '#10269310',
+    width: 49,
+    height: 4,
+    alignSelf: 'center',
+    marginTop: 21.5,
+  },
   btHeaderText: {
     fontSize: 18,
     fontWeight: 'semibold',
