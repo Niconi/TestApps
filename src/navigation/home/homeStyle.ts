@@ -57,7 +57,7 @@ export default StyleSheet.create({
   block: {
     backgroundColor: color.block,
     width: '100%',
-    height: 445,
+    height: '100%',
   },
   welcomeText: {
     fontSize: 13,
@@ -108,6 +108,12 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginTop: 21.5,
   },
+  btContainer:{
+    flexDirection: 'row',
+    marginHorizontal: 30,
+    marginTop: 15,
+    marginBottom: 15,
+  },
   btHeaderText: {
     fontSize: 18,
     fontWeight: 'semibold',
@@ -116,23 +122,33 @@ export default StyleSheet.create({
     marginTop: 14.5,
     marginBottom: 31,
   },
+  btTextContainer:{
+    flexBasis: '65%',
+  },
   btSubText: {
     fontSize: 13,
     fontWeight: 'medium',
     color: color.hText,
-    marginHorizontal: 71.71,
+  },
+    btText: {
+    fontSize: 10,
+    fontWeight: 'medium',
+    color: color.hDetails,
+  },
+  btAmountContainer:{
+    flexBasis: '20%',
   },
   btAmount: {
     fontSize: 13,
     fontWeight: 'semibold',
     color: color.hText,
     alignSelf: 'flex-end',
-    marginHorizontal: 29,
   },
-  btText: {
-    fontSize: 10,
-    fontWeight: 'medium',
-    color: color.hDetails,
-    marginHorizontal: 71.71,
+  logoContainer:{
+    flexBasis: '15%',
+  },
+  logo: {
+    width: 24,
+    height: 24,
   },
 });

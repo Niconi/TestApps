@@ -13,4 +13,5 @@ export const color = {
   hButton: '#2C2C2C',
   hButtonText: '#FFFFFF',
   progress: '#102693',
+  portofolioText: '#525252',
 };

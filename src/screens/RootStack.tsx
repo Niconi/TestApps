@@ -1,11 +1,15 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import main from '../navigation/main/main';
 import home from '../navigation/home/home';
 import portofolio from '../navigation/portofolio/portofolio';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import support from '../navigation/support/support';
+import profile from '../navigation/profile/profile';
 import HomeIcon from '../assets/images/Home.svg';
 import PortofolioIcon from '../assets/images/Portofolio.svg';
+import SupportIcon from '../assets/images/Support.svg';
+import ProfileIcon from '../assets/images/Profile.svg';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,23 +28,15 @@ function HomeStack() {
           paddingTop: 20,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
-          backgroundColor: '#FFFFFF',
-          elevation: 10,
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: -2,
-          },
-          shadowOpacity: 0.1,
-          shadowRadius: 3,
+          position: 'absolute',
         },
       }}>
       <Tab.Screen
         name="Home"
         component={home}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <HomeIcon width={size} height={size} fill={color} />
+          tabBarIcon: ({color, size}) => (
+            <HomeIcon width={size} height={size} stroke={color} />
           ),
         }}
       />
@@ -48,8 +44,26 @@ function HomeStack() {
         name="Portofolio"
         component={portofolio}
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({color, size}) => (
             <PortofolioIcon width={size} height={size} stroke={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Support"
+        component={support}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <SupportIcon width={size} height={size} stroke={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={profile}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <ProfileIcon width={size} height={size} stroke={color} />
           ),
         }}
       />
@@ -64,12 +78,12 @@ export function RootStack() {
         <Stack.Screen
           name="Main"
           component={main}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="HomeStack"
           component={HomeStack}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
